@@ -1,30 +1,31 @@
 """
 =========================================================
+
 Kaggriculture-AI
 Main Entry Point
-
 Author : Aswitha Madisetty
 Course : Kaggle + Google AI Agents Intensive
-=========================================================
-"""
 
+=========================================================
+
+"""
 from config.settings import PROJECT_NAME, VERSION
 from agents.planner import PlannerAgent
 from agents.research import ResearchAgent
 from agents.crop_analysis import CropAnalysisAgent
 from agents.advisor import AdvisorAgent
+from colorama import Fore, Style, init
 
+init(autoreset=True)
 
 def banner():
     print("=" * 60)
     print(PROJECT_NAME)
     print(f"Version : {VERSION}")
     print("=" * 60)
-
-
+    
 def main():
     banner()
-
     print("\n🌱 Welcome to Kaggriculture-AI")
     print("Initializing AI Agriculture Assistant...\n")
 
@@ -37,7 +38,6 @@ def main():
     print("5. Exit")
 
     while True:
-
         choice = input("\nSelect an option : ")
 
         if choice == "1":
@@ -65,12 +65,13 @@ def main():
             advisor.diagnose(crop, problem)
 
         elif choice == "5":
+
             print("\nThank you for using Kaggriculture-AI")
             break
 
         else:
-            print("\nInvalid choice. Please try again.")
 
+            print("\nInvalid choice. Please try again.")
 
 if __name__ == "__main__":
     main()
