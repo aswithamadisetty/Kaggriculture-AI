@@ -1,4 +1,5 @@
 from config.gemini import ask_gemini
+import time
 
 
 class ResearchAgent:
@@ -27,7 +28,11 @@ Provide:
 Return the answer in a clean numbered format.
 """
 
-        print("\nResearching...\n")
+        print("\nResearching", end="")
+        for _ in range(3):
+            print(".", end="", flush=True)
+            time.sleep(0.5)
+        print("\n")
 
         answer = ask_gemini(prompt)
 

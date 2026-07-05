@@ -1,4 +1,5 @@
 from config.gemini import ask_gemini
+import time
 
 class AdvisorAgent:
 
@@ -25,6 +26,10 @@ Provide:
 Return in a clean format.
 """
 
-        print("\nAnalyzing disease...\n")
+        print("\nAnalyzing disease", end="")
+        for _ in range(3):
+            print(".", end="", flush=True)
+            time.sleep(0.5)
+        print("\n")
         answer = ask_gemini(prompt)
         print(answer)

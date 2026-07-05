@@ -1,4 +1,5 @@
 from config.gemini import ask_gemini
+import time
 
 
 class PlannerAgent:
@@ -10,26 +11,37 @@ class PlannerAgent:
         print("=" * 60)
 
         prompt = f"""
-You are an expert agriculture consultant.
+You are an expert agriculture planner.
 
-Create a farming plan for the following goal.
+Create a practical farming plan.
 
 Goal:
 {goal}
 
-The response should include:
+Return your answer in markdown.
 
-1. Crop Planning
-2. Soil Preparation
-3. Fertilizer Recommendation
-4. Irrigation Plan
-5. Pest Management
-6. Harvest Strategy
+Use these sections:
 
-Return the answer in a clean numbered format.
+## Crop Planning
+
+## Soil Preparation
+
+## Fertilizer Recommendation
+
+## Irrigation Plan
+
+## Pest Management
+
+## Harvest Strategy
+
+Keep the answer concise and practical.
 """
 
-        print("\nGenerating AI farming plan...\n")
+        print("\nGenerating AI farming plan", end="")
+        for _ in range(3):
+            print(".", end="", flush=True)
+            time.sleep(0.5)
+        print("\n")
 
         answer = ask_gemini(prompt)
 
