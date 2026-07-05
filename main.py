@@ -11,6 +11,8 @@ Course : Kaggle + Google AI Agents Intensive
 from config.settings import PROJECT_NAME, VERSION
 from agents.planner import PlannerAgent
 from agents.research import ResearchAgent
+from agents.crop_analysis import CropAnalysisAgent
+from agents.advisor import AdvisorAgent
 
 
 def banner():
@@ -49,10 +51,18 @@ def main():
             researcher.research(question)
 
         elif choice == "3":
-            print("\nCrop Analysis Agent coming soon...")
+            crop = input("\nCrop: ")
+            soil = input("Soil Type: ")
+            location = input("Location: ")
+            season = input("Season: ")
+            analyzer = CropAnalysisAgent()
+            analyzer.analyze(crop, soil, location, season)
 
         elif choice == "4":
-            print("\nAdvisor Agent coming soon...")
+            crop = input("Crop: ")
+            problem = input("Problem: ")
+            advisor = AdvisorAgent()
+            advisor.diagnose(crop, problem)
 
         elif choice == "5":
             print("\nThank you for using Kaggriculture-AI")
