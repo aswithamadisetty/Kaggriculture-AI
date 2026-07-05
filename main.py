@@ -10,6 +10,7 @@ Course : Kaggle + Google AI Agents Intensive
 
 from config.settings import PROJECT_NAME, VERSION
 from agents.planner import PlannerAgent
+from agents.research import ResearchAgent
 
 
 def banner():
@@ -43,7 +44,9 @@ def main():
              planner.create_plan(goal)
 
         elif choice == "2":
-            print("\nResearch Agent coming soon...")
+            question = input("\nEnter your agriculture question: ")
+            researcher = ResearchAgent()
+            researcher.research(question)
 
         elif choice == "3":
             print("\nCrop Analysis Agent coming soon...")
