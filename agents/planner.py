@@ -1,36 +1,36 @@
-"""
-Planner Agent
---------------
-
-This agent helps farmers break a farming goal into
-simple actionable steps.
-"""
+from config.gemini import ask_gemini
 
 
 class PlannerAgent:
-    """AI Planner Agent"""
 
-    def __init__(self):
-        self.name = "Planner Agent"
-
-    def create_plan(self, goal: str):
-        """
-        Create a simple farming plan.
-        """
+    def create_plan(self, goal):
 
         print("\n" + "=" * 60)
-        print(f"{self.name}")
+        print("Planner Agent")
         print("=" * 60)
 
-        print(f"\nGoal: {goal}\n")
+        prompt = f"""
+You are an expert agriculture consultant.
 
-        print("Suggested Plan:\n")
+Create a farming plan for the following goal.
 
-        print("1. Identify the crop.")
-        print("2. Collect weather information.")
-        print("3. Analyze soil conditions.")
-        print("4. Recommend fertilizers.")
-        print("5. Estimate irrigation schedule.")
-        print("6. Generate final farming advice.")
+Goal:
+{goal}
 
-        print("\nPlanning completed successfully!")
+The response should include:
+
+1. Crop Planning
+2. Soil Preparation
+3. Fertilizer Recommendation
+4. Irrigation Plan
+5. Pest Management
+6. Harvest Strategy
+
+Return the answer in a clean numbered format.
+"""
+
+        print("\nGenerating AI farming plan...\n")
+
+        answer = ask_gemini(prompt)
+
+        print(answer)
