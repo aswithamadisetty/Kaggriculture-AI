@@ -1,19 +1,18 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from config.gemini import ask_gemini
 import time
 
-
 class CropAnalysisAgent:
-
     def analyze(self, crop, soil, location, season):
-
         print("\n" + "=" * 60)
-        print("Crop Analysis Agent")
+        print("🌾 Crop Analysis Agent")
         print("=" * 60)
 
         prompt = f"""
-You are an experienced agricultural scientist.
-
-Analyze the following farming details.
+You are an agricultural scientist.
 
 Crop:
 {crop}
@@ -27,26 +26,34 @@ Location:
 Season:
 {season}
 
-Provide:
+Provide a detailed analysis.
 
-1. Crop suitability
-2. Soil analysis
-3. Climate suitability
-4. Fertilizer recommendation
-5. Irrigation schedule
-6. Pest & Disease Risks
-7. Expected Yield
-8. Overall Recommendation
+Use markdown headings.
 
-Return the answer in a clean numbered format.
+Include:
+
+# Crop Suitability
+
+# Soil Analysis
+
+# Climate Suitability
+
+# Fertilizer Recommendation
+
+# Irrigation Schedule
+
+# Pest & Disease Risks
+
+# Expected Yield
+
+# Overall Recommendation
 """
 
-        print("\nAnalyzing crop", end="")
+        print("\nAnalyzing Crop", end="")
         for _ in range(3):
-            print(".", end="", flush=True)
+            print(" 🌾", end="", flush=True)
             time.sleep(0.5)
         print("\n")
 
         answer = ask_gemini(prompt)
-
-        print(answer)
+        return answer

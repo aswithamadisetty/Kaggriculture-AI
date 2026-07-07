@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12 text-center">
+        <h1 class="display-4 text-success mb-4">
+            <i class="bi bi-tree"></i> Welcome to AgriAdvisor
+        </h1>
+        <p class="lead">Your AI-powered Agriculture Assistant</p>
+        <hr class="my-4">
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-plant display-1 text-success"></i>
+                <h5 class="card-title mt-3">Crop Analysis</h5>
+                <p class="card-text">Analyze crop suitability, soil conditions, and get recommendations</p>
+                <a href="/crop-analysis" class="btn btn-success">Go to Analysis</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-heart-pulse display-1 text-danger"></i>
+                <h5 class="card-title mt-3">Disease Advisor</h5>
+                <p class="card-text">Get plant disease diagnosis and treatment recommendations</p>
+                <a href="/advisor" class="btn btn-success">Get Advice</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-calendar-check display-1 text-primary"></i>
+                <h5 class="card-title mt-3">Farming Planner</h5>
+                <p class="card-text">Create comprehensive farming plans for your goals</p>
+                <a href="/planner" class="btn btn-success">Create Plan</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+                <i class="bi bi-book display-1 text-info"></i>
+                <h5 class="card-title mt-3">Research</h5>
+                <p class="card-text">Get in-depth research and information on agricultural topics</p>
+                <a href="/research" class="btn btn-success">Start Research</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card bg-light">
+            <div class="card-body">
+                <h5 class="card-title"><i class="bi bi-info-circle"></i> About AgriAdvisor</h5>
+                <p>AgriAdvisor is an AI-powered agricultural advisory system developed as a capstone project. It uses Google's Gemini AI to provide:</p>
+                <ul>
+                    <li><strong>Crop Analysis:</strong> Comprehensive crop and soil analysis</li>
+                    <li><strong>Disease Diagnosis:</strong> Identify plant diseases and get treatment</li>
+                    <li><strong>Farming Plans:</strong> Create practical farming strategies</li>
+                    <li><strong>Research:</strong> Access agricultural research and best practices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

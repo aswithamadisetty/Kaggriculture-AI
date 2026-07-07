@@ -1,0 +1,104 @@
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 15px;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+#response-content {
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+#response-content h1,
+#response-content h2,
+#response-content h3 {
+    color: #2d6a4f;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#response-content h1 {
+    font-size: 1.8rem;
+    border-bottom: 2px solid #2d6a4f;
+    padding-bottom: 10px;
+}
+
+#response-content h2 {
+    font-size: 1.5rem;
+}
+
+#response-content h3 {
+    font-size: 1.2rem;
+}
+
+#response-content ul,
+#response-content ol {
+    padding-left: 20px;
+}
+
+#response-content li {
+    margin-bottom: 5px;
+}
+
+#response-content p {
+    margin-bottom: 15px;
+}
+
+#response-content strong {
+    color: #1a4b3c;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.footer {
+    margin-top: 50px;
+}
+
+.display-1 {
+    font-size: 4rem;
+}
+
+.btn-success {
+    background-color: #2d6a4f;
+    border-color: #2d6a4f;
+}
+
+.btn-success:hover {
+    background-color: #1a4b3c;
+    border-color: #1a4b3c;
+}
+
+.animate-loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+@media (max-width: 768px) {
+    .display-1 {
+        font-size: 2.5rem;
+    }
+    
+    .card {
+        margin-bottom: 20px;
+    }
+}

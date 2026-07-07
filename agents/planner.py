@@ -1,11 +1,12 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from config.gemini import ask_gemini
 import time
 
-
 class PlannerAgent:
-
     def create_plan(self, goal):
-
         print("\n" + "=" * 60)
         print("Planner Agent")
         print("=" * 60)
@@ -44,5 +45,4 @@ Keep the answer concise and practical.
         print("\n")
 
         answer = ask_gemini(prompt)
-
-        print(answer)
+        return answer

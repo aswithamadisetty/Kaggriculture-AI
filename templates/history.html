@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2><i class="bi bi-clock-history"></i> History</h2>
+        <p class="text-muted">Your recent queries and responses</p>
+        <hr>
+        <button id="clear-history" class="btn btn-danger mb-3">
+            <i class="bi bi-trash"></i> Clear History
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        {% if history %}
+        <div class="list-group">
+            {% for entry in history|reverse %}
+            <div class="list-group-item">
+                <div class="d-flex w-100 justify-content-between">
+                    <h6 class="mb-1">
+                        <span class="badge bg-success">{{ entry.type }}</span>
+                        {{ entry.query[:100] }}{% if entry.query|length > 100 %}...{% endif %}
+                    </h6>
+                    <small class="text-muted">{{ entry.timestamp }}</small>
+                </div>
+                <p class="mb-1 text-muted">{{ entry.response[:150] }}{% if entry.response|length > 150 %}...{% endif %}</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <i class="bi bi-info-circle"></i> No history found. Start using the app to save queries.
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
